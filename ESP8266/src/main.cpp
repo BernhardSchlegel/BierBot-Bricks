@@ -454,7 +454,7 @@ void contactBackend()
     String apikey_restored = readStringFromEEPROM(EEPROM_ADDRESS_APIKEY);
     String temp = String(celsius);
     String relais = String(global_relais_state);
-    String url = "https://cloud.bierbot.com/api/iot/v1?apikey=" + apikey_restored + "&type=" + "sonoff_th16" + "&brand=" + "bierbot" + "&version=" + global_version + "&s_number_temp_0=" + temp + "&a_bool_epower_0=" + relais + "&chipid=" + chipid; // + "&temp=" + temp + "&type=" + "sonoff_th16" + "&version=" + global_version
+    String url = "https://bricks.bierbot.com/api/iot/v1?apikey=" + apikey_restored + "&type=" + "sonoff_th16" + "&brand=" + "bierbot" + "&version=" + global_version + "&s_number_temp_0=" + temp + "&a_bool_epower_0=" + relais + "&chipid=" + chipid; // + "&temp=" + temp + "&type=" + "sonoff_th16" + "&version=" + global_version
 
     Serial.print("s_number_temp_0=" + temp);
     Serial.println(", a_bool_epower_0=" + relais);
