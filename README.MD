@@ -1,8 +1,10 @@
 ![Bricks](./docs/logo.png)
 
-## BierBot bricks
+# BierBot bricks
 
-### Setup for easy use
+If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help!
+
+## Setup for easy use
 
 First, we need to flash the firmware.
 
@@ -25,13 +27,26 @@ and cut a extension cable into two pieces and connect as shown in the picture (r
 N = Blue, E / Ground symbol = Yellow / Green. L IN must go to your plug, L OUT to your socket.
 
 
-Your device is now ready to be used.
+Your device is now ready to be used. :triumph:
 
 Go to [bricks.bierbot.com](https://bricks.bierbot.com/#/) > "Brewery" > "Bricks" and hit "Add device". Copy the API-Key 
 into your clipboard. Power up your BierBot Brick. Scan for the "BierBot Brick 101" WiFi and connect. Enter 
 the credentials to your home WiFi and paste the API-key from your clipboard. Hit "Save". 
 
 **DONE**. The BierBot Brick should show up in your dashboard.
+
+## Help
+
+For general questions please use [Github Discussions](https://github.com/BernhardSchlegel/BierBot-Brick/discussions).
+
+If you think you found a bug or want to request a feature: 
+[Submit an issue](https://github.com/BernhardSchlegel/BierBot-Brick/issues/new/choose).
+
+In any case: Thanks for participating!
+
+## Developer
+
+The information in this section is only relevant if you want to participate in development.
 
 ### Developer Setup
 
@@ -46,17 +61,9 @@ the credentials to your home WiFi and paste the API-key from your clipboard. Hit
 
 To decode stacktraces use `python3 ./decoder.py -e ./firmware.elf ./trace.txt -s` from [here](https://github.com/janLo/EspArduinoExceptionDecoder).
 
-### Help
-
-For general questions please use [Github Discussions](https://github.com/BernhardSchlegel/BierBot-Brick/discussions).
-
-If you think you found a bug or want to request a feature: 
-[Submit an issue](https://github.com/BernhardSchlegel/BierBot-Brick/issues/new/choose).
-
 If you get a bunch of WiFi Manager related compiling messages, unzip 
 "./backup/2021_01_15_16_39_WiFiManager.zip" to ".pio/libdeps/sonoff_th". 
 
-In any case: Thanks for participating!
 
 ### TODOs
 
@@ -76,7 +83,4 @@ We don't take any responsibility nor liability for using this software nor for t
 
 [disclaimer source](https://github.com/arendst/Tasmota/edit/development/README.md)
 
-## Help
 
-Q: My COM-Port is not recognized!
-A: Install the FT232RL Virtual COM-Port Driver from [here](https://ftdichip.com/drivers/vcp-drivers/).
