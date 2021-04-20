@@ -39,7 +39,7 @@ float celsius, fahrenheit;
 String chipid = "";
 uint32_t main_interval_ms = 1000; // 1s default intervall for first iteration
 uint8_t global_relais_state = 0;
-String global_version = "0.9.0";
+String global_version = "0.9.1";
 
 void writeStringToEEPROM(int addrOffset, const String &strToWrite)
 {
