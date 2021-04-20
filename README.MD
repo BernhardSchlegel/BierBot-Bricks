@@ -17,7 +17,11 @@ First, we need to flash the firmware.
 3. Hook everything up as shown in the image below (left side). 
 4. Download the [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher).
 6. Grab the (current) release from [here](https://github.com/BernhardSchlegel/BierBot-Brick/releases/latest).
-7. Open the NodeMCU Flasher, select the "firmware.bin" you just downloaded and hit "Flash".
+7. Open the NodeMCU Flasher
+      1. Select tab "Config", and paste the filename of the binary you've just downloaded 
+         into the first line ("firmware.bin"). ESP8266Flasher.exe and the firmware.bin must
+         be located in the same directory.
+      2. Select tab "Operation" and hit "Flash"!
 
 ![Image of AC connection](./docs/wiring.png)
 
