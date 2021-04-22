@@ -25,7 +25,7 @@ First, we need to flash the firmware.
 
 ![Image of AC connection](./docs/wiring.png)
 
-Second, read [the disclaimer](https://github.com/BernhardSchlegel/BierBot-Brick/blob/master/README.md#development) 
+Second, read [the disclaimer](#disclaimer) 
 and cut a extension cable into two pieces and connect as shown in the picture (right side). 
 **ATTENTION** :warning: check if the labels on YOUR PCB match the colors of the cables: L = Brown, 
 N = Blue, E / Ground symbol = Yellow / Green. L IN must go to your plug, L OUT to your socket.
