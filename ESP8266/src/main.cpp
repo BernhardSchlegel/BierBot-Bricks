@@ -39,7 +39,7 @@ float celsius, fahrenheit;
 String chipid = "";
 uint32_t main_interval_ms = 1000; // 1s default intervall for first iteration
 uint8_t global_relais_state = 0;
-String global_version = "0.9.1";
+String global_version = "0.9.2";
 
 void writeStringToEEPROM(int addrOffset, const String &strToWrite)
 {
@@ -490,12 +490,14 @@ void contactBackend()
         Serial.println(F("payload empty, skipping."));
         Serial.println(F("setting next request to 60s."));
         main_interval_ms = 60000;
+        global_relais_state = 0;
       }
       else if (payload.indexOf("{") == -1)
       {
         Serial.println("no JSON - skippping.");
         Serial.println(F("setting next request to 60s."));
         main_interval_ms = 60000;
+        global_relais_state = 0;
       }
       else
       {
@@ -511,6 +513,7 @@ void contactBackend()
           Serial.println(error.f_str());
           global_error = 1;
           global_error_text = String("JSON error: ") + String(error.f_str());
+          global_relais_state = 0;
         }
         else
         {
@@ -521,6 +524,7 @@ void contactBackend()
             const char *error_text = doc["error_text"];
             global_error_text = String(error_text);
             global_error = 1;
+            global_relais_state = 0;
           }
           else
           {
@@ -531,6 +535,7 @@ void contactBackend()
               const char *warning_text = doc["warning_text"];
               global_warning_text = String(warning_text);
               global_warning = 1;
+              global_relais_state = 0;
             }
             else
             {
@@ -551,6 +556,10 @@ void contactBackend()
             {
               global_relais_state = doc["epower_0_state"];
             }
+            else
+            {
+              global_relais_state = 0;
+            }
           }
         }
       }
@@ -559,6 +568,7 @@ void contactBackend()
     {
       Serial.print(F("setting next request to 60s."));
       main_interval_ms = 60000;
+      global_relais_state = 0;
     }
     http.end(); //Close connection
   }
