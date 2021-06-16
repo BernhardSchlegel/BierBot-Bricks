@@ -6,6 +6,8 @@ If you get stuck along the way, please dont hesitate to [reach out](https://gith
 
 ## Setup for easy use
 
+There is a [YouTube-Video](https://www.youtube.com/watch?v=ZJEo5KyGwx4) that shows you how to build your Brick step-by-step. In the following, you'll find a description that is boiled down to the most important steps.
+
 First, we need to flash the firmware.
 
 1. Order a Sonoff [TH16 + DS18B20 Temperature sensor](https://amzn.to/3uhLiXN).
