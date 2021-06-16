@@ -10,7 +10,7 @@ First, we need to flash the firmware.
 
 1. Order a Sonoff [TH16 + DS18B20 Temperature sensor](https://amzn.to/3uhLiXN).
 2. In case you don't have one laying around, you'll also need:
-   1. [FT232RL USB to TTL](https://amzn.to/3ujiT3w) for flashing the BierBot Brick firmware onto your TH16.
+   1. [FT232RL USB to TTL](https://amzn.to/3ujiT3w) for flashing the BierBot Brick firmware onto your TH16. **Make sure the jumper is set to 3.3V**.
    2. [the cheapest female rainbow cables you can find on the WWW](https://amzn.to/3udmdh2) to hook the TH16 and the FT232 up.
    3. [a 4x1 pin header](https://amzn.to/3rXGrJT) to solder it onto your TH16. 
 3. Hook everything up as shown in the image below (left side). 
@@ -20,6 +20,7 @@ First, we need to flash the firmware.
       1. Select tab "Config", and paste the filename of the binary you've just downloaded 
          into the first line ("firmware.bin"). ESP8266Flasher.exe and the firmware.bin must
          be located in the same directory.
+      2. Press the button on your TH16 (and hold it), connect the FT232RL, release the button. 
       2. Select tab "Operation" and hit "Flash"!
 
 ![Image of AC connection](./docs/wiring.png)
