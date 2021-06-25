@@ -1,12 +1,16 @@
 ![Bricks](./docs/logo.png)
 
-# BierBot bricks
+# BierBot Bricks
 
-If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help!
+BierBot Bricks is a combination of brewing soft- and hardware that helps you to nail your temperatures (by controlling your heating and cooling equipment), monitor your gravity during fermentation, and much more. Everything is avaiable on a beautiful website that works perfectly on all display sizes: [bricks.bierbot.com](https://bricks.bierbot.com).
+
+If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help! If you 👍 it, please consider giving this repo a **star** 🌟 - THANKS!
 
 ## Setup for easy use
 
-There is a [YouTube-Video](https://www.youtube.com/watch?v=ZJEo5KyGwx4) that shows you how to build your Brick step-by-step. In the following, you'll find a description that is boiled down to the most important steps.
+There is a [YouTube-Video](https://www.youtube.com/watch?v=ZJEo5KyGwx4) that shows you how to build your Brick step-by-step. There is also a [detailled howto guide including many pictures](https://docs.bierbot.com/hardware/hardware/brick-101#how-to-build-you-own-bierbot-brick) available on the official documentation. 
+
+In the following, you'll find a description that is boiled down to the most important steps.
 
 First, we need to flash the firmware.
 
@@ -20,20 +24,19 @@ First, we need to flash the firmware.
 6. Grab the (current) release from [here](https://github.com/BernhardSchlegel/BierBot-Brick/releases/latest).
 7. Open the NodeMCU Flasher
       1. Select tab "Config", and paste the filename of the binary you've just downloaded 
-         into the first line ("firmware.bin"). ESP8266Flasher.exe and the firmware.bin must
-         be located in the same directory.
+         into the first line ("firmware.bin") or select one using the dots on the right. 
+         ESP8266Flasher.exe and the firmware.bin must be located in the same directory.
       2. Press the button on your TH16 (and hold it), connect the FT232RL, release the button. 
       2. Select tab "Operation" and hit "Flash"!
 
 ![Image of AC connection](./docs/wiring.png)
 
-Second, read [the disclaimer](#disclaimer) 
-and cut a extension cable into two pieces and connect as shown in the picture (right side). 
+Second, read [the disclaimer](#disclaimer) and cut a extension cable into two pieces and connect as shown in the picture (right side). 
 **ATTENTION** :warning: check if the labels on YOUR PCB match the colors of the cables: L = Brown, 
 N = Blue, E / Ground symbol = Yellow / Green. L IN must go to your plug, L OUT to your socket.
 
 
-Your device is now ready to be used. :triumph:
+Your device is now ready to be used. 😃😤
 
 Go to [bricks.bierbot.com](https://bricks.bierbot.com/#/) > "Brewery" > "Bricks" and hit "Add device". Copy the API-Key 
 into your clipboard. Power up your BierBot Brick. Scan for the "BierBot Brick 101" WiFi and connect. Enter 
