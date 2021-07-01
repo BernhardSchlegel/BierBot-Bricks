@@ -2,7 +2,7 @@
 
 # BierBot Bricks
 
-BierBot Bricks is a combination of brewing soft- and hardware that helps you to nail your temperatures (by controlling your heating and cooling equipment), monitor your gravity during fermentation, and much more. Everything is avaiable on a beautiful website that works perfectly on all display sizes: [bricks.bierbot.com](https://bricks.bierbot.com).
+BierBot Bricks is a combination of brewing soft- and hardware that helps you to nail your temperatures (by controlling your heating and cooling equipment), monitor your gravity during fermentation, and much more. Everything is available on a beautiful website that works perfectly on all display sizes: [bricks.bierbot.com](https://bricks.bierbot.com).
 
 If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help! If you 👍 it, please consider giving this repo a **star** 🌟 - THANKS!
 
