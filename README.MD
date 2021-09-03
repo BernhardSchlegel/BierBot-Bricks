@@ -6,6 +6,8 @@ BierBot Bricks is a combination of brewing soft- and hardware that helps you to 
 
 If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help! If you 👍 it, please consider giving this repo a **star** 🌟 - THANKS!
 
+If you need more flexibility and have time to build your own RaspberryPi based solution, checkout the [BierBot Bricks software for RaspberryPi](https://github.com/BernhardSchlegel/BierBot-Bricks-RaspberryPi).
+
 ## Setup for easy use
 
 There is a [YouTube-Video](https://www.youtube.com/watch?v=ZJEo5KyGwx4) that shows you how to build your Brick step-by-step. There is also a [detailled howto guide including many pictures](https://docs.bierbot.com/hardware/hardware/brick-101#how-to-build-you-own-bierbot-brick) available on the official documentation. 
