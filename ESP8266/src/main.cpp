@@ -36,10 +36,11 @@ uint8_t global_warning = 0;
 String global_error_text = "";
 String global_warning_text = "";
 float celsius, fahrenheit;
+String sensor_id = "";
 String chipid = "";
 uint32_t main_interval_ms = 1000; // 1s default intervall for first iteration
 uint8_t global_relais_state = 0;
-String global_version = "0.9.3";
+String global_version = "0.9.4";
 
 void writeStringToEEPROM(int addrOffset, const String &strToWrite)
 {
@@ -155,6 +156,19 @@ void short_flash_500ms(uint8_t count)
   }
 }
 
+void arrayToString(byte array[], unsigned int len, char buffer[])
+{
+  // source https://stackoverflow.com/questions/44748740/
+  for (unsigned int i = 0; i < len; i++)
+  {
+    byte nib1 = (array[i] >> 4) & 0x0F;
+    byte nib2 = (array[i] >> 0) & 0x0F;
+    buffer[i * 2 + 0] = nib1 < 0xA ? '0' + nib1 : 'A' + nib1 - 0xA;
+    buffer[i * 2 + 1] = nib2 < 0xA ? '0' + nib2 : 'A' + nib2 - 0xA;
+  }
+  buffer[len * 2] = '\0';
+}
+
 void readTemperature()
 {
   // put your main code here, to run repeatedly:
@@ -217,6 +231,11 @@ void readTemperature()
   present = ds.reset();
   ds.select(addr);
   ds.write(0xBE); // Read Scratchpad
+
+  // store sensor id => 8 bytes, one byte needs 2 char + Termination
+  char buffer[17] = "";
+  arrayToString(addr, 8, buffer);
+  sensor_id = String(buffer);
 
   Serial.print("  Data = ");
   Serial.print(present, HEX);
@@ -457,7 +476,7 @@ void contactBackend()
     String apikey_restored = readStringFromEEPROM(EEPROM_ADDRESS_APIKEY);
     String temp = String(celsius);
     String relais = String(global_relais_state);
-    String url = "https://bricks.bierbot.com/api/iot/v1?apikey=" + apikey_restored + "&type=" + "sonoff_th16" + "&brand=" + "bierbot" + "&version=" + global_version + "&s_number_temp_0=" + temp + "&a_bool_epower_0=" + relais + "&chipid=" + chipid; // + "&temp=" + temp + "&type=" + "sonoff_th16" + "&version=" + global_version
+    String url = "https://bricks.bierbot.com/api/iot/v1?apikey=" + apikey_restored + "&type=" + "sonoff_th16" + "&brand=" + "bierbot" + "&version=" + global_version + "&s_number_temp_0=" + temp + "&a_bool_epower_0=" + relais + "&chipid=" + chipid + "&s_number_temp_id_0=" + sensor_id;
 
     Serial.print("s_number_temp_0=" + temp);
     Serial.println(", a_bool_epower_0=" + relais);
