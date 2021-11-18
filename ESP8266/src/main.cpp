@@ -38,9 +38,10 @@ String global_warning_text = "";
 float celsius, fahrenheit;
 String sensor_id = "";
 String chipid = "";
+String ssid = "";
 uint32_t main_interval_ms = 1000; // 1s default intervall for first iteration
 uint8_t global_relais_state = 0;
-String global_version = "0.9.4";
+String global_version = "0.9.5";
 
 void writeStringToEEPROM(int addrOffset, const String &strToWrite)
 {
@@ -127,7 +128,7 @@ void checkButton()
         Serial.println("Starting config portal");
         wm.setConfigPortalTimeout(120);
 
-        if (!wm.startConfigPortal("BierBot Brick 101"))
+        if (!wm.startConfigPortal(ssid.c_str()))
         {
           Serial.println("failed to connect or hit timeout");
           delay(3000);
@@ -293,6 +294,8 @@ void setup()
   Serial.println("BierBot Brick 101 starting");
   chipid = String(ESP.getFlashChipId()) + "_" + String(WiFi.macAddress());
   Serial.println("chipid: " + chipid);
+  ssid = "BierBot Brick 101 " + String(ESP.getFlashChipId());
+
   short_flash_500ms(10);
 
   //---------------------------------------------------------------------------------------
@@ -328,7 +331,7 @@ void setup()
   // test custom html(radio)
   //const char* custom_apikey_str = "<br/><label for='apikey'>API key</label><br><input type='text' name='apikey' value='1' checked>";
   //new (&custom_field_apikey) WiFiManagerParameter(custom_apikey_str); // custom html input
-  new (&custom_field_apikey) WiFiManagerParameter("apikey", "BierBot Bricks API Key", "aZ42ILoveBrewingB33r", 37, "placeholder=\"get your API key at bricks.bierbot.com\"");
+  new (&custom_field_apikey) WiFiManagerParameter("apikey", "BierBot Bricks API Key", "", 37, "placeholder=\"get your API key at bricks.bierbot.com\"");
 
   wm.addParameter(&custom_field_apikey);
   //wm.setConfigPortalBlocking(false);
@@ -343,9 +346,7 @@ void setup()
   // then goes into a blocking loop awaiting configuration and will return success result
 
   bool res;
-  // res = wm.autoConnect(); // auto generated AP name from chipid
-  // res = wm.autoConnect("AutoConnectAP"); // anonymous ap
-  res = wm.autoConnect("BierBot Brick 101"); // password protected ap
+  res = wm.autoConnect(ssid.c_str()); 
 
   if (!res)
   {
