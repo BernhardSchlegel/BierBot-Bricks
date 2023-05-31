@@ -4,7 +4,7 @@
 
 BierBot Bricks is a combination of brewing soft- and hardware that helps you to nail your temperatures (by controlling your heating and cooling equipment), monitor your gravity during fermentation, and much more. Everything is available on a beautiful website that works perfectly on all display sizes: [bricks.bierbot.com](https://bricks.bierbot.com).
 
-:information_source: The hardware for this repo (Sonoff TH16 based on an ESP8266) is end of production and harder to get. But: we've got you covered. It's official successor, the TH Origin (supporting up to 20Amps), is fully supported. The respective [repository is located here](https://github.com/BernhardSchlegel/Brick-32). 
+:information_source: The hardware for this repo (Sonoff TH16 based on an ESP8266) is end of production and harder to get. But: we've got you covered. Its official successor, the TH Origin (supporting up to 20Amps), is fully supported. The respective [software and repository is located here](https://github.com/BernhardSchlegel/Brick-32). 
 
 If you get stuck along the way, please dont hesitate to [reach out](https://github.com/BernhardSchlegel/BierBot-Brick/discussions/new) - you're not alone and we're happy to help! If you 👍 it, please consider giving this repo a **star** 🌟 - THANKS!
 
